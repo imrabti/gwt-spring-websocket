@@ -11,5 +11,4 @@
     <source path="shared"/>
 
     <extend-configuration-property name="gin.ginjector.modules" value="com.nuvola.myproject.client.MyModule"/>
-    <set-configuration-property name="gwtp.bootstrapper" value="com.nuvola.myproject.client.BootstrapperImpl"/>
 </module>

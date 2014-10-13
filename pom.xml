@@ -14,10 +14,9 @@
         <gin.version>2.1.2</gin.version>
         <guice.version>3.0</guice.version>
 
-        <spring.version>4.0.5.RELEASE</spring.version>
-        <spring-security.version>3.2.4.RELEASE</spring-security.version>
+        <spring.version>4.1.1.RELEASE</spring.version>
         <servlet.version>3.1.0</servlet.version>
-        <jackson.version>2.3.1</jackson.version>
+        <jackson.version>2.4.3</jackson.version>
         <logback.version>1.1.1</logback.version>
         <slf4j.version>1.7.6</slf4j.version>
         <jsr250.version>1.0</jsr250.version>
@@ -85,6 +84,11 @@
             <artifactId>spring-aspects</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 
         <!-- Logging -->
         <dependency>
@@ -118,34 +122,6 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
-
-        <!-- Security -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-aspects</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>jsr250-api</artifactId>
-            <version>${jsr250.version}</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -183,7 +159,7 @@
                     <mode>htmlunit</mode>
                     <gen>gen</gen>
 
-                    <extraJvmArgs>-Xss1024k -Xmx512M -XX:MaxPermSize=512m</extraJvmArgs>
+                    <extraJvmArgs>-Xss1024k -Xmx512M</extraJvmArgs>
                     <logLevel>INFO</logLevel>
 
                     <copyWebapp>true</copyWebapp>

@@ -1,6 +1,5 @@
 package com.nuvola.myproject.client.application;
 
-import javax.annotation.Nonnull;
 import javax.inject.Inject;
 
 import org.realityforge.gwt.websockets.client.WebSocket;
@@ -23,6 +22,7 @@ public class ApplicationPresenter extends Presenter<MyView, MyProxy> {
     @NameToken(NameTokens.HOME)
     interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
+
 
     interface MyView extends View {
         void appendText(String text);
@@ -50,7 +50,7 @@ public class ApplicationPresenter extends Presenter<MyView, MyProxy> {
         webSocket = WebSocket.newWebSocketIfSupported();
         webSocket.setListener(new WebSocketListenerAdapter() {
             @Override
-            public void onMessage(@Nonnull WebSocket webSocket, @Nonnull String s) {
+            public void onMessage(WebSocket webSocket, String s) {
                 getView().appendText(s);
             }
         });
